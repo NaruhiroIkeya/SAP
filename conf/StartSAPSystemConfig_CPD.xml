@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<!--
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: Program	: StartSAPSystemConfig_DEV.xml
+:: Title	: SAP System Startup configuration file
+::
+:: Version	: v01
+:: Author	: Naruhiro Ikeya
+:: CreationDate	: 10/08/2023
+::
+:: Copyright (c) 2023 BeeX Inc. All rights reserved.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-->
+
+<Configuration>
+	<SAP>
+		<SID No = "1">
+			<name>HDD</name>
+			<host No = "1">
+				<name>azrchphdb002</name>
+				<nr>10</nr>
+				<timeout>300</timeout>
+				<delay>10</delay>
+				<user>hddadm</user>
+                                <encryptedkey>224,160,251,253,41,239,220,203,177,8,232,94,254,197,205,10,64,151,244,111,129,183,141,63 </encryptedkey>
+                                <encryptedpass>76492d1116743f0423413b16050a5345MgB8ADYAagByAEkAKwBCAEYAYQBBAEUAQgA4AG4ATQBpAGUAaABVAEoAaQBKAEEAPQA9AHwANQAxADAAYgBlADgAYQA3AGQAMQAxADgAYQA1ADAANwAxADcAMgA1ADUAMAA2ADAANAAzADAANwA1ADkAZQBlAGQAMwA0ADAAMgAwADQAMwAxAGIAZgBjADkANAA3ADIAMwA0AGUAMwA2ADcANQBmAGEAYwA2AGYAYwAwADkAOQA=</encryptedpass>
+			</host>
+		</SID>
+		<SID No = "2">
+			<name>DAA</name>
+			<host No = "1">
+				<name>localhost</name>
+				<nr>98</nr>
+				<timeout>300</timeout>
+				<delay>10</delay>
+			</host>
+		</SID>
+		<SID No = "3">
+			<name>CPD</name>
+			<host No = "1">
+				<name>localhost</name>
+				<nr>01</nr>
+				<timeout>300</timeout>
+				<delay>10</delay>
+			</host>
+			<host No = "2">
+				<name>localhost</name>
+				<nr>00</nr>
+				<timeout>300</timeout>
+				<delay>10</delay>
+			</host>
+		</SID>
+	</SAP>
+	<Services>
+		<host No = "1">
+			<name>localhost</name>
+			<service No = "1">
+				<name>SAPHostExec</name>
+				<delay>3</delay>
+			</service>
+			<service No = "2">
+				<name>SAPHostControl</name>
+				<delay>3</delay>
+			</service>
+			<service No = "3">
+				<name>SAPCPD_01</name>
+				<delay>3</delay>
+			</service>
+			<service No = "4">
+				<name>SAPCPD_00</name>
+				<delay>3</delay>
+			</service>
+			<service No = "5">
+				<name>SAPDAA_98</name>
+				<delay>3</delay>
+			</service>
+		</host>
+	</Services>
+	<ClusterServices>
+		<name></name>
+		<resource No = "1">
+			<name></name>
+			<delay></delay>
+		</resource>
+	</ClusterServices>
+</Configuration>
